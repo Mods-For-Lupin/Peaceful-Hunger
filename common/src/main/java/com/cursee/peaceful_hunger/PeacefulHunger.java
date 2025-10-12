@@ -8,6 +8,6 @@ public class PeacefulHunger {
   }
 
   public static ResourceLocation identifier(String path) {
-    return ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, path);
+    return new ResourceLocation(Constants.MOD_ID, path);
   }
 }

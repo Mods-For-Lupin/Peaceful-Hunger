@@ -1,8 +1,6 @@
 plugins {
-    // see https://fabricmc.net/develop/ for new versions
-    id 'fabric-loom' version '1.11-SNAPSHOT' apply false
-    // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
-    id 'net.neoforged.moddev' version '2.0.110' apply false
+    id 'fabric-loom' version '1.9-SNAPSHOT' apply(false)
+    id 'net.neoforged.moddev.legacyforge' version '2.0.77' apply(false)
 
     // The version of Forgix that is used, see https://github.com/PacifistMC/Forgix/releases for new versions
     id "io.github.pacifistmc.forgix" version "1.2.9"
@@ -23,17 +21,10 @@ forgix {
         jarLocation = "build/libs/${mod_id}-fabric-${minecraft_version}-${project.version}.jar"
     }
 
-//    forge {
-//        projectName = "forge"
-//        jarLocation = "build/libs/${mod_id}-forge-${minecraft_version}-${project.version}.jar"
-//
-//        mixin "${mod_id}.forge.mixins.json"
-//    }
+    forge {
+        projectName = "forge"
+        jarLocation = "build/libs/${mod_id}-forge-${minecraft_version}-${project.version}.jar"
 
-    neoforge {
-        projectName = "neoforge"
-        jarLocation = "build/libs/${mod_id}-neoforge-${minecraft_version}-${project.version}.jar"
-
-        mixin "${mod_id}.neoforge.mixins.json"
+        mixin "${mod_id}.forge.mixins.json"
     }
 }
