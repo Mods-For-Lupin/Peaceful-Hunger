@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.cursee.happy_ghasts_boost.HappyGhastsBoostFabric"
+            "com.cursee.peaceful_hunger.PeacefulHungerFabric"
         ]
     },
     "mixins": [
