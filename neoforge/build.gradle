@@ -40,8 +40,4 @@ neoForge {
     }
 }
 
-dependencies {
-    implementation "maven.modrinth:monolib:neoforge-1.21.9-3.1.0"
-}
-
 sourceSets.main.resources { srcDir 'src/generated/resources' }
