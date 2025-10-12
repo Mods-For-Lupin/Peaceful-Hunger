@@ -30,8 +30,16 @@ public class PeacefulHungerConfig implements IMixinConfigPlugin {
     return hungerDifficulty;
   }
 
+  public void setHungerDifficulty(Difficulty hungerDifficulty) {
+    this.hungerDifficulty = hungerDifficulty;
+  }
+
   public boolean isNaturalRegenAllowedInPeaceful() {
     return naturalRegenAllowedInPeaceful;
+  }
+
+  public void setNaturalRegenAllowedInPeaceful(boolean naturalRegenAllowedInPeaceful) {
+    this.naturalRegenAllowedInPeaceful = naturalRegenAllowedInPeaceful;
   }
 
   @Override
@@ -49,6 +57,11 @@ public class PeacefulHungerConfig implements IMixinConfigPlugin {
 
   @Override
   public boolean shouldApplyMixin(String s, String s1) {
+
+    System.out.println("Checking PeacefulHunger's IMixinConfigPlugin#shouldApplyMixin");
+    System.out.println(s);
+    System.out.println(s1);
+
     return true;
   }
 

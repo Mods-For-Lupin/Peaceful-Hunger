@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
             "com.cursee.peaceful_hunger.PeacefulHungerFabric"
+        ],
+        "client": [
+            "com.cursee.peaceful_hunger.PeacefulHungerClientFabric"
         ]
     },
     "mixins": [

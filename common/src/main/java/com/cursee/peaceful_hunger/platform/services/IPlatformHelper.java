@@ -1,6 +1,9 @@
 package com.cursee.peaceful_hunger.platform.services;
 
+import com.cursee.peaceful_hunger.impl.common.network.packet.ConfigSyncS2CPacket;
 import java.nio.file.Path;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.server.level.ServerPlayer;
 
 public interface IPlatformHelper {
 
@@ -39,4 +42,6 @@ public interface IPlatformHelper {
   Path getGameDirectory();
 
   String getGameDirectoryString();
+
+  <T extends CustomPacketPayload> void sendToPlayer(ServerPlayer serverPlayer, T packet);
 }
