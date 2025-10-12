@@ -1,17 +1,5 @@
-# Determines long the Happy Ghast has to fly forward until it gets a speed boost
-seconds_until_boost = 4
+# Peaceful = 0, Easy = 1, Normal = 2, Hard = 3
+hunger_difficulty = 3
 
-# Determines how much faster the ghast moves when flying forward while boosted
-forward_multiplier = 2.0
-
-# Determines how much faster the ghast moves when flying with Speed I
-potion_multiplier = 2.5
-
-# Determines how much faster the ghast moves when flying with Speed II
-potion_multiplier_two = 3.5
-
-# Determines whether HUD debug overlay will display while riding Happy Ghast
-debugging = false
-
-# Client: Determines whether boost overlay will display while riding Happy Ghast
-display_boost_bar = true
+# Determines whether the "Natural Regeneration" game rule will affect players in Peaceful
+natural_regen_in_peaceful = false
