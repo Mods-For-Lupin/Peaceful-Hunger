@@ -8,11 +8,11 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/peaceful-hunger",
+        "sources": "https://github.com/Mods-For-Lupin/Peaceful-Hunger"
     },
     "license": "${license}",
-    "icon": "${mod_id}.png",
+    "icon": "peaceful_hunger.png",
     "environment": "*",
     "entrypoints": {
         "main": [
@@ -23,8 +23,8 @@
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "peaceful_hunger.mixins.json",
+        "peaceful_hunger.fabric.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
