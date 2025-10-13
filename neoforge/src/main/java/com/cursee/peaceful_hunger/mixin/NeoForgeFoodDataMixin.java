@@ -8,11 +8,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(FoodData.class)
-public class FoodDataMixin {
+public class NeoForgeFoodDataMixin {
 
   /// when ticking/updating FoodData for players, use our configured hungerDifficulty value instead
   @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
   private Difficulty peaceful_hunger$tick$getDifficulty(Difficulty originalHungerDifficulty) {
+
     return PeacefulHungerConfig.getInstance().getHungerDifficulty();
   }
 
@@ -20,12 +21,8 @@ public class FoodDataMixin {
   @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
   private boolean peaceful_hunger$tick$getNaturalRegeneration(boolean allowedByGameRule) {
 
-    boolean naturalRegenAllowedInPeaceful = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
+    boolean allowedByModConfig = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
 
-    if (!naturalRegenAllowedInPeaceful) {
-      return allowedByGameRule && PeacefulHungerConfig.getInstance().getHungerDifficulty() != Difficulty.PEACEFUL;
-    }
-
-    return allowedByGameRule;
+    return allowedByGameRule && allowedByModConfig;
   }
 }

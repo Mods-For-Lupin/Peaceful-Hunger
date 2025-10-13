@@ -4,10 +4,7 @@
   "package": "com.cursee.peaceful_hunger.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_18",
-  "mixins": [
-    "FoodDataMixin",
-    "PlayerMixin"
-  ],
+  "mixins": [],
   "client": [],
   "server": [],
   "injectors": {
