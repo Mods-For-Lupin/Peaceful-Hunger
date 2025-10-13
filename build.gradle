@@ -27,4 +27,11 @@ forgix {
 
         mixin "${mod_id}.forge.mixins.json"
     }
+
+//    neoforge {
+//        projectName = "neoforge"
+//        jarLocation = "build/libs/${mod_id}-neoforge-${minecraft_version}-${project.version}.jar"
+//
+//        mixin "${mod_id}.neoforge.mixins.json"
+//    }
 }
