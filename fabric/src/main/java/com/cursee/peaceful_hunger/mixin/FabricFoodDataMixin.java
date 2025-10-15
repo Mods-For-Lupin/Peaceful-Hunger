@@ -17,12 +17,12 @@ public class FabricFoodDataMixin {
     return PeacefulHungerConfig.getInstance().getHungerDifficulty();
   }
 
-  /// Check if mods allows regeneration in peaceful. If the mod doesn't allow regeneration in peaceful, return `allowed by the game` AND `not in peaceful` otherwise, return the original value
-  @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
-  private boolean peaceful_hunger$tick$getNaturalRegeneration(boolean allowedByGameRule) {
-
-    boolean allowedByModConfig = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
-
-    return allowedByGameRule && allowedByModConfig;
-  }
+//  /// Check if mods allows regeneration in peaceful. If the mod doesn't allow regeneration in peaceful, return `allowed by the game` AND `not in peaceful` otherwise, return the original value
+//  @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
+//  private boolean peaceful_hunger$tick$getNaturalRegeneration(boolean allowedByGameRule) {
+//
+//    boolean allowedByModConfig = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
+//
+//    return allowedByGameRule && allowedByModConfig;
+//  }
 }
