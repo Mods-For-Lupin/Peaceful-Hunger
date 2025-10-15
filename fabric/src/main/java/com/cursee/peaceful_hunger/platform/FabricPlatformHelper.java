@@ -4,11 +4,12 @@ import com.cursee.peaceful_hunger.PeacefulHunger;
 import com.cursee.peaceful_hunger.impl.common.network.packet.ConfigSyncS2CPacket;
 import com.cursee.peaceful_hunger.platform.services.IPlatformHelper;
 import java.nio.file.Path;
-import net.fabricmc.fabric.api.networking.v1.FabricPacket;
-import net.fabricmc.fabric.api.networking.v1.PacketType;
+//import net.fabricmc.fabric.api.networking.v1.FabricPacket;
+//import net.fabricmc.fabric.api.networking.v1.PacketType;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 
@@ -45,12 +46,14 @@ public class FabricPlatformHelper implements IPlatformHelper {
 
   @Override
   public <T> void sendToPlayer(ServerPlayer serverPlayer, T packet) {
-    ServerPlayNetworking.send(serverPlayer, FabricCompatiblePacket.packetFromSuper(packet));
+    ServerPlayNetworking.send(serverPlayer, FabricCompatiblePacket.IDENTIFIER, FabricCompatiblePacket.packetFromSuper(packet).toData());
   }
 
-  public static class FabricCompatiblePacket extends ConfigSyncS2CPacket implements FabricPacket {
+  public static class FabricCompatiblePacket extends ConfigSyncS2CPacket {
 
-    public static final PacketType<FabricCompatiblePacket> TYPE = PacketType.create(PeacefulHunger.identifier("config"), FabricCompatiblePacket::read);
+//    public static final PacketType<FabricCompatiblePacket> TYPE = PacketType.create(PeacefulHunger.identifier("config"), FabricCompatiblePacket::read);
+
+    public static final ResourceLocation IDENTIFIER = PeacefulHunger.identifier("config");
 
     /// ugly, UGLLYYYY
     public static <T> FabricCompatiblePacket packetFromSuper(T packet) {
@@ -66,10 +69,10 @@ public class FabricPlatformHelper implements IPlatformHelper {
       super.write(buf);
     }
 
-    @Override
-    public PacketType<?> getType() {
-      return TYPE;
-    }
+//    @Override
+//    public PacketType<?> getType() {
+//      return TYPE;
+//    }
 
     public static FabricCompatiblePacket read(FriendlyByteBuf data) {
       return new FabricCompatiblePacket(Difficulty.byId(data.readVarInt()), data.readBoolean());

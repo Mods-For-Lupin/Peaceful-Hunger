@@ -1,18 +1,18 @@
 {
     "schemaVersion": 1,
-    "id": "${mod_id}",
-    "version": "${version}",
-    "name": "${mod_name}",
-    "description": "${description}",
+    "id": "peaceful_hunger",
+    "version": "2.2.0",
+    "name": "Peaceful Hunger",
+    "description": "Allows you to starve in Peaceful!",
     "authors": [
-        "${mod_author}"
+        "Jason13"
     ],
     "contact": {
         "homepage": "https://fabricmc.net/",
         "sources": "https://github.com/FabricMC/fabric-example-mod"
     },
-    "license": "${license}",
-    "icon": "${mod_id}.png",
+    "license": "Unlicense",
+    "icon": "peaceful_hunger.png",
     "environment": "*",
     "entrypoints": {
         "main": [
@@ -23,13 +23,13 @@
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json",
-        "${mod_id}.fabric.mixins.json"
+        "peaceful_hunger.mixins.json",
+        "peaceful_hunger.fabric.mixins.json"
     ],
     "depends": {
-        "fabricloader": ">=${fabric_loader_version}",
+        "fabricloader": ">=0.16.0",
         "fabric-api": "*",
-        "minecraft": "~${minecraft_version}",
+        "minecraft": "~1.19.2",
         "java": ">=17"
     },
     "suggests": {

@@ -13,6 +13,7 @@ public class PeacefulHungerClientFabric implements ClientModInitializer {
 
     // register client receiver of packet
     // ClientPlayNetworking.registerGlobalReceiver(Packets.CONFIG_SYNC_ID, (packet, context) -> packet.handle());
-    ClientPlayNetworking.registerGlobalReceiver(FabricCompatiblePacket.TYPE, (packet, player, responseSender) -> packet.handle());
+    // ClientPlayNetworking.registerGlobalReceiver(FabricCompatiblePacket.TYPE, (packet, player, responseSender) -> packet.handle());
+    ClientPlayNetworking.registerGlobalReceiver(FabricCompatiblePacket.IDENTIFIER, (client, handler, buf, responseSender) -> ConfigSyncS2CPacket.read(buf).handle());
   }
 }

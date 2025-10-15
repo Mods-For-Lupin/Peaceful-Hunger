@@ -3,9 +3,9 @@ package com.cursee.peaceful_hunger;
 import com.cursee.peaceful_hunger.impl.common.network.packet.ConfigSyncS2CPacket;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
-import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
-import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+//import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
+//import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
+//import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 
 public class PeacefulHungerFabric implements ModInitializer {
 

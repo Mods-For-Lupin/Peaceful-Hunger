@@ -3,6 +3,7 @@ package com.cursee.peaceful_hunger.impl.common.network.packet;
 import com.cursee.peaceful_hunger.impl.client.network.packet.ConfigSyncClientHandler;
 import com.cursee.peaceful_hunger.impl.common.config.PeacefulHungerConfig;
 import com.cursee.peaceful_hunger.platform.Services;
+import io.netty.buffer.Unpooled;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,6 +24,16 @@ public class ConfigSyncS2CPacket {
   public void write(FriendlyByteBuf data) {
     data.writeVarInt(this.hungerDifficulty.getId());
     data.writeBoolean(this.naturalRegenAllowedInPeaceful);
+  }
+
+  public FriendlyByteBuf toData() {
+
+    FriendlyByteBuf data = new FriendlyByteBuf(Unpooled.buffer());
+
+    data.writeVarInt(this.hungerDifficulty.getId());
+    data.writeBoolean(this.naturalRegenAllowedInPeaceful);
+
+    return data;
   }
 
   public Difficulty getHungerDifficulty() {
