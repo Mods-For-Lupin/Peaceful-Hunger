@@ -16,16 +16,16 @@ public class FoodDataMixin {
     return PeacefulHungerConfig.getInstance().getHungerDifficulty();
   }
 
-  /// Check if mods allows regeneration in peaceful. If the mod doesn't allow regeneration in peaceful, return `allowed by the game` AND `not in peaceful` otherwise, return the original value
-  @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
-  private boolean peaceful_hunger$tick$getNaturalRegeneration(boolean allowedByGameRule) {
-
-    boolean naturalRegenAllowedInPeaceful = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
-
-    if (!naturalRegenAllowedInPeaceful) {
-      return allowedByGameRule && PeacefulHungerConfig.getInstance().getHungerDifficulty() != Difficulty.PEACEFUL;
-    }
-
-    return allowedByGameRule;
-  }
+//  /// Check if mods allows regeneration in peaceful. If the mod doesn't allow regeneration in peaceful, return `allowed by the game` AND `not in peaceful` otherwise, return the original value
+//  @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
+//  private boolean peaceful_hunger$tick$getNaturalRegeneration(boolean allowedByGameRule) {
+//
+//    boolean naturalRegenAllowedInPeaceful = PeacefulHungerConfig.getInstance().isNaturalRegenAllowedInPeaceful();
+//
+//    if (!naturalRegenAllowedInPeaceful) {
+//      return allowedByGameRule && PeacefulHungerConfig.getInstance().getHungerDifficulty() != Difficulty.PEACEFUL;
+//    }
+//
+//    return allowedByGameRule;
+//  }
 }
