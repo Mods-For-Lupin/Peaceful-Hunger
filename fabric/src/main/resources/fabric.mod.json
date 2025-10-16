@@ -23,7 +23,6 @@
         ]
     },
     "mixins": [
-        "peaceful_hunger.mixins.json",
         "peaceful_hunger.fabric.mixins.json"
     ],
     "depends": {
